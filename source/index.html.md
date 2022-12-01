@@ -36,18 +36,38 @@ Client-Server 간  API 명세서이자 API의 버전를 관리하는 문서입�
 
 # Authentication
 
-> 테스트 시 JWT 토큰을 발급받는 방법입니다. 
+> RESPONSE 
 
-```HTTP
-GET /jwt
+```json
+
+{
+  "AUTH-TOKEN": "xxxx.xxxxx.xxxxx",
+  "R-AUTH-TOKEN": "xxxxx.xxxxxx.xxxxxx"
+}
+
 ```
-> 발급받은 JWT 토큰을 Header에 추가하여 사용합니다.
+Fandom Sprots BE에서의 인증/인가는 Jwt 토큰을 사용합니다.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+- Jwt 토큰은 `access token`과 `refresh token`을 사용하고 `access token`이 만료된 경우 `refresh token`을 사용하여 `access token`을 재발급합니다.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+- 재발급하는 과정에서 Client가 관여하는/해야할 부분은 없습니다. 
 
-`Authorization: meowmeowmeow`
+- 토큰은 `Cookie`에 담아 사용합니다.
+- `cookie`의 key값에 해당하는 token-key는 애플리케이션 프로파일(로컬/개발/운영) 별로 상이합니다. 
+
+
+### 토큰 형식
+<code>
+  AUTH-TOKEN : xxxx.xxxx.xxxx
+
+  R-AUTH-TOKEN : xxxx.xxxx.xxxx
+</code>
+
+
+### Jwt 토큰 발급
+
+
+
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
