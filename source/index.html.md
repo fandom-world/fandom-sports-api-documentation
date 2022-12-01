@@ -30,9 +30,9 @@ Client-Server 간  API 명세서이자 API의 버전를 관리하는 문서입�
 
 문서 제공자는 REST API를 만드는 BE 개발자이며, 문서 사용자는 해당 REST API를 호출하는 FE개발자 입니다.
 
-프로젝트는 [fandom/slate](https://github.com/fandom-world/fandom-sports-api-documentation)에서 다운로드 받을 수 있고, 권한이 없을 경우 `이재근`님께 권한요청바랍니다.
+프로젝트는 [fandom/slate](https://github.com/fandom-world/fandom-sports-api-documentation)에서 다운로드 받을 수 있습니다. 권한이 없을 경우 `이재근`님께 권한요청바랍니다.
 
-| 작성 가이드는 [컨플루언스](https://fandom-proj.atlassian.net/wiki/spaces/FANDOM/pages/23068676/API)에 정리되어있습니다.
+| 문서작성은 [컨플루언스](https://fandom-proj.atlassian.net/wiki/spaces/FANDOM/pages/23068676/API)와 Guide 탭을 참조해주세요.
 
 # Authentication
 
@@ -58,7 +58,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 ## Request without parameter 
 
 
-This endpoint retrieves all kittens.
+어떤 파라미터도 포함하지 않은 API 호출 방식입니다.
 
 ### HTTP Request
 
