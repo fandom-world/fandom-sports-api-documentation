@@ -2,10 +2,7 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - http
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -22,43 +19,30 @@ meta:
   - name: description
     content: Documentation for the Kittn API
 ---
+# Documentation version
+- V0.1
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Fandom Sports BE에서 제공하는 REST API 문서입니다.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Client-Server 간  API 명세서이자 API의 버전를 관리하는 문서입니다.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+문서 제공자는 REST API를 만드는 BE 개발자이며, 문서 사용자는 해당 REST API를 호출하는 FE개발자 입니다.
+
+프로젝트는 [fandom/slate](https://github.com/fandom-world/fandom-sports-api-documentation)에서 다운로드 받을 수 있고, 권한이 없을 경우 `이재근`님께 권한요청바랍니다.
+
+| 작성 가이드는 [컨플루언스](https://fandom-proj.atlassian.net/wiki/spaces/FANDOM/pages/23068676/API)에 정리되어있습니다.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
+```http
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
 > Make sure to replace `meowmeowmeow` with your API key.
 
 Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
@@ -75,32 +59,12 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ## Get All Kittens
 
-```ruby
+```http
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
 > The above command returns JSON structured like this:
 
 ```json
@@ -141,31 +105,13 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Get a Specific Kitten
 
-```ruby
+```http
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get(2)
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
 
 > The above command returns JSON structured like this:
 
@@ -195,31 +141,11 @@ ID | The ID of the kitten to retrieve
 
 ## Delete a Specific Kitten
 
-```ruby
+```http
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
 ```
 
 > The above command returns JSON structured like this:
