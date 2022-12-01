@@ -36,14 +36,12 @@ Client-Server 간  API 명세서이자 API의 버전를 관리하는 문서입�
 
 # Authentication
 
-> To authorize, use this code:
+> 테스트 시 JWT 토큰을 발급받는 방법입니다. 
 
-```http
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```HTTP
+GET /jwt
 ```
-> Make sure to replace `meowmeowmeow` with your API key.
+> 발급받은 JWT 토큰을 Header에 추가하여 사용합니다.
 
 Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
@@ -55,49 +53,23 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Guide
 
-## Get All Kittens
+## Request without parameter 
 
-```http
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
 
 This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://{{host}}/health`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Type | Default |Description
+--------- |---------|---------|-----------
+- | -    | -       | -
+- | -    | -       | -
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
