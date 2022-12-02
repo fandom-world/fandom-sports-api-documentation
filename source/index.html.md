@@ -22,7 +22,7 @@ meta:
     content: Documentation for the Kittn API
 ---
 # Documentation version
-- Version 0.2
+- Version 0.3
 
 # Introduction
 
