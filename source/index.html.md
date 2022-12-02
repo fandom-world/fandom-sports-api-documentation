@@ -82,29 +82,20 @@ Fandom Sprots BE에서의 인증/인가는 Jwt 토큰을 사용합니다.
 
 ### 기타
 - 토큰은 `Cookie`에 담아 사용합니다.
-- `Cookie`의 key값에 해당하는 token-key는 애플리케이션 프로파일(로컬/개발/운영) 별로 상이합니다.
+- `Cookie`의 key에 해당하는 token-key는 애플리케이션 프로파일(로컬/개발/운영) 별로 상이합니다.
 
 
-### 토큰 형식
-<code>
-  AUTH-TOKEN : xxxx.xxxx.xxxx
+- 쿠키 예시
 
-  R-AUTH-TOKEN : xxxx.xxxx.xxxx
-</code>
+name(프로파일 별 상이) | value      | httpOnly |secure(프로파일 별 상이)
+--------- |------------|--------|-----------
+AUTH-TOKEN | ${jwt 토큰}  | true   | true/false
+R-AUTH-TOKEN | ${jwt 토큰}  | true       | true/false
 
-
-### Jwt 토큰 발급
-
-
-
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
 
 # Guide(요청 유형) 
 
-## Request without parameter 
+## 1. Request without parameter 
 
 
 어떤 파라미터도 포함하지 않은 API 호출 방식입니다.
@@ -118,41 +109,20 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 Parameter | Type | Default |Description
 --------- |---------|---------|-----------
 - | -    | -       | -
-- | -    | -       | -
+
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## 2. Request with parameter
 
-```http
-require 'kittn'
+파라미터가 존재하는 API 호출 방식입니다.
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
+### 2-1) path parameter
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET {{scheme}}://{{host}}/users/{userId}`
 
 ### URL Parameters
 
