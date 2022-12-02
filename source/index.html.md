@@ -36,16 +36,7 @@ Client-Server 간  API 명세서이자 API의 버전를 관리하는 문서입�
 
 # Authentication
 
-> GET {{scheme}}://{{host}}/jwt
 
-```json
-
-{
-  "AUTH-TOKEN": "xxxx.xxxxx.xxxxx",
-  "R-AUTH-TOKEN": "xxxxx.xxxxxx.xxxxxx"
-}
-
-```
 Fandom Sprots BE에서의 인증/인가는 Jwt 토큰을 사용합니다.
 
 ### 인증 절차
@@ -65,6 +56,17 @@ Fandom Sprots BE에서의 인증/인가는 Jwt 토큰을 사용합니다.
   - generated time
   - expired time
   - auth type
+
+> GET {{scheme}}://{{host}}/jwt
+
+```json
+
+{
+  "AUTH-TOKEN": "xxxx.xxxxx.xxxxx",
+  "R-AUTH-TOKEN": "xxxxx.xxxxxx.xxxxxx"
+}
+
+```
 
 ### 로그인 기능이 없는 경우(개발전)
 - 테스트 용으로 사용할 수 있는 Jwt 토큰 발급 API입니다.
