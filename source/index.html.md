@@ -10,7 +10,7 @@ toc_footers:
 
 includes:
   - errors
-  - users/test
+  - users/user
 
 search: true
 
