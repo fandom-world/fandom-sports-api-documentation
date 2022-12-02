@@ -11,6 +11,7 @@ toc_footers:
 includes:
   - errors
   - users/user
+  - team/team
 
 search: true
 
